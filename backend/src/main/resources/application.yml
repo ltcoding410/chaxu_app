@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: chaxu-api
+  profiles:
+    default: demo
+  jackson:
+    time-zone: Asia/Shanghai
+server:
+  # 未设置时随机分配空闲端口，启动日志可查看；上线前由你指定。
+  port: ${SERVER_PORT:0}
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        http-only: true
+        same-site: lax
+        secure: ${SESSION_COOKIE_SECURE:false}
+  error:
+    include-message: never
+    include-stacktrace: never
